@@ -100,419 +100,432 @@ import AudioToolbox
         AudioServicesPlaySystemSound(0x450)
     }
     override func updateViewConstraints() {
-      super.updateViewConstraints()
-      // Add custom view sizing constraints here
-    }
+
+        super.updateViewConstraints()
+        
+        }
+        
+        
+  
     override func viewDidLoad() {
+        // Add custom view sizing constraints here
+              let screenSize = UIScreen.main.bounds.size
+              view.translatesAutoresizingMaskIntoConstraints = true
+                if(preferredInterfaceOrientationForPresentation.isPortrait)  {
+                             //set row landscape protrait height
+                              RowA0.heightAnchor.constraint(equalToConstant: 45).isActive = true
+                              RowA1.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowA2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowA3.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowA4.heightAnchor.constraint(equalToConstant: 45).isActive = true
+                              RowB1.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowB2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowB3.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowC1.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              RowC2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              ThirdKeyboardButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              ShiftButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                              DeleteButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+                              //change keyboard protrait hight
+                               let heightconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .height,relatedBy: .equal,toItem:  nil,attribute: .notAnAttribute,multiplier: 0.0,
+                                                                         constant: 258) // Set custom height here
+                                                                         self.view.addConstraint(heightconstraint)
+                               //change keyboard protrait width
+                                let widthconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .width,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
+                                                                         constant: screenSize.width) // Set custom width here
+                                                                         self.view.addConstraint(widthconstraint)
+                 }
+                 if(preferredInterfaceOrientationForPresentation.isLandscape) {
+                            //set row landscape landscape height
+                              RowA0.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowA1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowA2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowA3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowA4.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowB1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowB2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowB3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowC1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              RowC2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              ThirdKeyboardButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              ThirdKeyboardButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                              ShiftButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              ShiftButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                              DeleteButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                              DeleteButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                            // change keyboard landscape hight
+                               let heightconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .height,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
+                                                                         constant: 170) // Set custom height here
+                                                                         self.view.addConstraint(heightconstraint)
+                               //change keyboard landscape width
+                                let widthconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .width,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
+                                                                         constant: screenSize.width) // Set custom width here
+                                                                         self.view.addConstraint(widthconstraint)
+                 }
+        
         // Perform custom UI setup here
         // disable autoresize
-        view.translatesAutoresizingMaskIntoConstraints = true
-          if(preferredInterfaceOrientationForPresentation.isPortrait)  {
-                       //set row landscape protrait height
-                        RowA0.heightAnchor.constraint(equalToConstant: 45).isActive = true
-                        RowA1.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowA2.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowA3.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowA4.heightAnchor.constraint(equalToConstant: 45).isActive = true
-                        RowB1.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowB2.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowB3.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowC1.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        RowC2.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        ThirdKeyboardButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        ShiftButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                        //change keyboard protrait hight
-                         let heightconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .height,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
-                                                                   constant: 258) // Set custom height here
-                                                                   self.view.addConstraint(heightconstraint)
-                         //change keyboard protrait width
-                          let widthconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .width,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
-                                                                   constant: 414) // Set custom width here
-                                                                   self.view.addConstraint(widthconstraint)
-           }
-           if(preferredInterfaceOrientationForPresentation.isLandscape) {
-                      //set row landscape landscape height
-                        RowA0.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowA1.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowA2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowA3.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowA4.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowB1.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowB2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowB3.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowC1.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        RowC2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        ThirdKeyboardButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                        ShiftButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                       //change keyboard landscape hight
-                         let heightconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .height,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
-                                                                   constant: 170) // Set custom height here
-                                                                   self.view.addConstraint(heightconstraint)
-                         //change keyboard landscape width
-                          let widthconstraint = NSLayoutConstraint(item: self.view as Any,attribute: .width,relatedBy: .equal,toItem: nil,attribute: .notAnAttribute,multiplier: 0.0,
-                                                                   constant: 808) // Set custom width here
-                                                                   self.view.addConstraint(widthconstraint)
-           }
       super.viewDidLoad()
       shiftStatus = 0
       deleteletters = 0
     }
-    // keypress and update the last 3 characters to placeholder
-    @IBAction func keypressed(sender: UIButton) {
+      // keypress and update the last 3 characters to placeholder
+      @IBAction func keypressed(sender: UIButton) {
+         
 
-        // ButtonAnimation
-        UIView.animate(withDuration: 0.14, delay: 0, options: UIView.AnimationOptions.transitionCurlUp) {
-                    sender.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 2.0)
-                } completion: { Bool in
-                    sender.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
-                }
-       // insert text
-           let character = sender.titleLabel!.text!
-                   proxy.insertText(character)
-           // check shiftStatus
-           if shiftStatus == 1 {
-                    shiftbuttonpressed(self.ShiftButton)
-                    }
-        // replace letters with tones
-        let Str3 = proxy.documentContextBeforeInput
-        let Last3Letter = Str3!.suffix(3)
-        let Str2 = proxy.documentContextBeforeInput
-        let Last2Letter = Str2!.suffix(2)
-        let Str1 = proxy.documentContextBeforeInput
-        let LastLetter = Str1!.suffix(1)
+          // ButtonAnimation
+          UIView.animate(withDuration: 0.14, delay: 0, options: UIView.AnimationOptions.transitionCurlUp) {
+                      sender.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 2.0)
+                  } completion: { Bool in
+                      sender.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
+                  }
+         // insert text
+             let character = sender.titleLabel!.text!
+                     proxy.insertText(character)
+             // check shiftStatus
+             if shiftStatus == 1 {
+                      shiftbuttonpressed(self.ShiftButton)
+                      }
+          // replace letters with tones
+          let Str3 = proxy.documentContextBeforeInput
+          let Last3Letter = Str3!.suffix(3)
+          let Str2 = proxy.documentContextBeforeInput
+          let Last2Letter = Str2!.suffix(2)
+          let Str1 = proxy.documentContextBeforeInput
+          let LastLetter = Str1!.suffix(1)
 
-                // check thirdkeyboard status
-                if Last2Letter == "+-"
-                { var i = 0
-                            while i<2 {
-                                proxy.deleteBackward()
-                               i += 1
-                            }
-                }
-                if Last2Letter == "-+"
-                { var i = 0
-                            while i<2 {
-                                proxy.deleteBackward()
-                               i += 1
-                            }
-                }
-                //   replace tones with last three letters
-                if (LastLetter.range(of: "ɑ", options: .regularExpression) == nil)
-                {
-                            // Counter
-                    self.counter += 1
-                    deleteletters = counter
-                    let currentLetters = Str3!.suffix(counter)
-                    Tone1Button.setTitle(String(currentLetters), for: UIControl.State.normal)
-                    Tone2Button.setTitle(String(currentLetters), for: UIControl.State.normal)
-                    Tone3Button.setTitle(String(currentLetters), for: UIControl.State.normal)
-                    Tone4Button.setTitle(String(currentLetters), for: UIControl.State.normal)
-                }
-                //replace lastletter // uppercased
-                if (LastLetter.range(of: "Ü", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "Ü"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "U", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "U"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "I", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "I"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "O", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "O"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "E", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "E"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "A", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "A"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                //replace lastletter // lowercased
-                if (LastLetter.range(of: "ü", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "ü"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "u", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "u"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "i", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "i"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
+                  // check thirdkeyboard status
+                  if Last2Letter == "#+="
+                  { var i = 0
+                              while i<2 {
+                                  proxy.deleteBackward()
+                                 i += 1
+                              }
+                  }
+                  if Last2Letter == "123"
+                  { var i = 0
+                              while i<2 {
+                                  proxy.deleteBackward()
+                                 i += 1
+                              }
+                  }
+                  //   replace tones with last three letters
+                  if (LastLetter.range(of: "ɑ", options: .regularExpression) == nil)
+                  {
+                              // Counter
+                      self.counter += 1
+                      deleteletters = counter
+                      let currentLetters = Str3!.suffix(counter)
+                      Tone1Button.setTitle(String(currentLetters), for: UIControl.State.normal)
+                      Tone2Button.setTitle(String(currentLetters), for: UIControl.State.normal)
+                      Tone3Button.setTitle(String(currentLetters), for: UIControl.State.normal)
+                      Tone4Button.setTitle(String(currentLetters), for: UIControl.State.normal)
+                  }
+                  //replace lastletter // uppercased
+                  if (LastLetter.range(of: "Ü", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "Ü"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "U", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "U"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "I", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "I"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "O", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "O"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "E", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "E"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "A", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "A"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  //replace lastletter // lowercased
+                  if (LastLetter.range(of: "ü", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "ü"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "u", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "u"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "i", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "i"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
 
-                if (LastLetter.range(of: "o", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "o"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "e", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "e"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                if (LastLetter.range(of: "ɑ", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 1
-                    pickup = "ɑ"
-                    bufferletters = LastLetter
-                    replaceletters()
-                }
-                //replace last2letter // uppercased
-                if (Last2Letter.range(of: "UN", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "U"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "IN", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "I"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ON", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "O"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "OU", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "O"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "EN", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "E"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "EI", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "E"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ER", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "E"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                
-                if (Last2Letter.range(of: "AO", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "A"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "AN", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "A"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "AI", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "A"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                //replace last2letter // lowerrcased
-                if (Last2Letter.range(of: "un", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "u"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "in", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "i"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "on", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "o"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ou", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "o"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "en", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "e"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "er", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "e"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ei", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "e"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ɑo", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "ɑ"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ɑn", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "ɑ"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                if (Last2Letter.range(of: "ɑi", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 2
-                    pickup = "ɑ"
-                    bufferletters = Last2Letter
-                    replaceletters()
-                }
-                //replace last3letter // uppercased
-                if (Last3Letter.range(of: "UNG", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "U"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ING", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "I"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ONG", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "O"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ANG", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "A"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ENG", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "E"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                //replace last3letter // lowercased
-                if (Last3Letter.range(of: "ung", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "u"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ing", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "i"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ong", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "o"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "ɑng", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "ɑ"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-                if (Last3Letter.range(of: "eng", options: .regularExpression) != nil)
-                {   counter = 0
-                    deleteletters = 3
-                    pickup = "e"
-                    bufferletters = Last3Letter
-                    replaceletters()
-                }
-       // AudioServicesPlaySystemSound(0x450)
-        AudioServicesPlaySystemSound(0x450)
-    }
+                  if (LastLetter.range(of: "o", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "o"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "e", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "e"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  if (LastLetter.range(of: "ɑ", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 1
+                      pickup = "ɑ"
+                      bufferletters = LastLetter
+                      replaceletters()
+                  }
+                  //replace last2letter // uppercased
+                  if (Last2Letter.range(of: "UN", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "U"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "IN", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "I"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ON", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "O"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "OU", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "O"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "EN", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "E"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "EI", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "E"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ER", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "E"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  
+                  if (Last2Letter.range(of: "AO", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "A"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "AN", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "A"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "AI", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "A"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  //replace last2letter // lowerrcased
+                  if (Last2Letter.range(of: "un", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "u"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "in", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "i"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "on", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "o"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ou", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "o"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "en", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "e"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "er", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "e"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ei", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "e"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ɑo", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "ɑ"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ɑn", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "ɑ"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  if (Last2Letter.range(of: "ɑi", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 2
+                      pickup = "ɑ"
+                      bufferletters = Last2Letter
+                      replaceletters()
+                  }
+                  //replace last3letter // uppercased
+                  if (Last3Letter.range(of: "UNG", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "U"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ING", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "I"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ONG", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "O"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ANG", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "A"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ENG", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "E"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  //replace last3letter // lowercased
+                  if (Last3Letter.range(of: "ung", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "u"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ing", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "i"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ong", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "o"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "ɑng", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "ɑ"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+                  if (Last3Letter.range(of: "eng", options: .regularExpression) != nil)
+                  {   counter = 0
+                      deleteletters = 3
+                      pickup = "e"
+                      bufferletters = Last3Letter
+                      replaceletters()
+                  }
+         // AudioServicesPlaySystemSound(0x450)
+          AudioServicesPlaySystemSound(0x450)
+      }
     // update tone buttons
     func replaceletters(){
             let Bianxing1 = pickup + "\u{0304}"
@@ -530,7 +543,7 @@ import AudioToolbox
             }
     @IBAction func SecondKeyboardKeyPressed(_ sender: UIButton) {
         if SecondaryKeybaordButton.titleLabel?.text == "ABC"{
-            RowA0.isHidden = true
+            RowA0.isHidden = false
             RowA1.isHidden = false
             RowA2.isHidden = false
             RowA3.isHidden = false
@@ -562,7 +575,7 @@ import AudioToolbox
         AudioServicesPlaySystemSound(0x450)
     }
     @IBAction func ThirdKeyboardPress(_ sender: UIButton) {
-        if ThirdKeyboardButton.titleLabel?.text == "+-"{
+        if ThirdKeyboardButton.titleLabel?.text == "#+="{
             RowA0.isHidden = true
             RowA1.isHidden = true
             RowA2.isHidden = true
@@ -574,9 +587,9 @@ import AudioToolbox
             RowC2.isHidden = false
             ShiftButton.isHidden = true
             DeleteButton.isHidden = false
-            ThirdKeyboardButton.setTitle("-+", for: UIControl.State.normal)
+            ThirdKeyboardButton.setTitle("123", for: UIControl.State.normal)
         }
-        if ThirdKeyboardButton.titleLabel?.text == "-+"{
+        if ThirdKeyboardButton.titleLabel?.text == "123"{
             RowA0.isHidden = true
             RowA1.isHidden = true
             RowA2.isHidden = true
@@ -588,7 +601,7 @@ import AudioToolbox
             RowC2.isHidden = true
             ShiftButton.isHidden = true
             DeleteButton.isHidden = false
-            ThirdKeyboardButton.setTitle("+-", for: UIControl.State.normal)
+            ThirdKeyboardButton.setTitle("#+=", for: UIControl.State.normal)
         }
         AudioServicesPlaySystemSound(0x450)
      }
@@ -728,6 +741,8 @@ import AudioToolbox
             ShiftButton.setTitleColor(UIColor.green, for: UIControl.State.normal)
         }
     }
+      
+
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
@@ -738,4 +753,3 @@ import AudioToolbox
     }
 
 }
-
