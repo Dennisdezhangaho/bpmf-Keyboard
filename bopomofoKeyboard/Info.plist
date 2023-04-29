@@ -15,10 +15,10 @@
 			<key>RequestsOpenAccess</key>
 			<false/>
 		</dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.keyboard-service</string>
 		<key>NSExtensionMainStoryboard</key>
 		<string>KeyboardStoryboard</string>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.keyboard-service</string>
 	</dict>
 </dict>
 </plist>
